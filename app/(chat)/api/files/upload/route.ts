@@ -54,6 +54,7 @@ export async function POST(request: Request) {
       const data = await put(`${filename}`, fileBuffer, {
         access: 'public',
       });
+      console.log(data,"data")
 
       return NextResponse.json(data);
     } catch (error) {

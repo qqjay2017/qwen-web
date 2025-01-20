@@ -105,7 +105,10 @@ export async function POST(request: Request) {
       const result = streamText({
         model: customModel(model.apiIdentifier),
         system: systemPrompt,
+     
         messages: coreMessages,
+
+
         maxSteps: 5,
         experimental_activeTools: allTools,
         tools: {
@@ -158,6 +161,7 @@ export async function POST(request: Request) {
               if (kind === "text") {
                 const { fullStream } = streamText({
                   model: customModel(model.apiIdentifier),
+
                   system:
                     "Write about the given topic. Markdown is supported. Use headings wherever appropriate.",
                   prompt: title,
@@ -477,7 +481,7 @@ export async function POST(request: Request) {
           isEnabled: true,
           functionId: "stream-text",
         },
-      });
+      } );
 
       result.mergeIntoDataStream(dataStream);
     },

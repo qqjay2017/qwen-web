@@ -166,7 +166,7 @@ function PureMultimodalInput({
       toast.error('Failed to upload file, please try again!');
     }
   };
-
+  // 上传文件
   const handleFileChange = useCallback(
     async (event: ChangeEvent<HTMLInputElement>) => {
       const files = Array.from(event.target.files || []);
@@ -241,17 +241,17 @@ function PureMultimodalInput({
         )}
         rows={2}
         autoFocus
-        onKeyDown={(event) => {
-          if (event.key === 'Enter' && !event.shiftKey) {
-            event.preventDefault();
+        // onKeyDown={(event) => {
+        //   if (event.key === 'Enter' && !event.shiftKey) {
+        //     event.preventDefault();
 
-            if (isLoading) {
-              toast.error('Please wait for the model to finish its response!');
-            } else {
-              submitForm();
-            }
-          }
-        }}
+        //     if (isLoading) {
+        //       toast.error('Please wait for the model to finish its response!');
+        //     } else {
+        //       // submitForm();
+        //     }
+        //   }
+        // }}
       />
 
       <div className="absolute bottom-0 p-2 w-fit flex flex-row justify-start">
