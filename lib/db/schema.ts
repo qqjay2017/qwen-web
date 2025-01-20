@@ -113,3 +113,6 @@ export const suggestion = pgTable(
 );
 
 export type Suggestion = InferSelectModel<typeof suggestion>;
+
+
+export * from './resources';
