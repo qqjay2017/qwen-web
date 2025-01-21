@@ -116,3 +116,4 @@ export type Suggestion = InferSelectModel<typeof suggestion>;
 
 
 export * from './resources';
+export *  from './embeddings';
